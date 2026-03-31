@@ -18,7 +18,9 @@
     --secondary-foreground: 0 0% 24%;
     --muted: 0 0% 45%;
     --muted-foreground: 0 0% 38%;
-    --accent: 0 0% 28%;
+    --accent: 203 100% 52%;
+    --accent-strong: 203 100% 48%;
+    --accent-soft: 203 90% 88%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 0% 10%;
     --destructive-foreground: 0 0% 100%;
@@ -30,8 +32,8 @@
     --glass: 0 0% 100% / 0.72;
     --glass-border: 0 0% 88% / 0.42;
     --glow-black: 0 0 40px hsla(0,0%,0%,0.08);
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 40%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 94%));
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 10%), hsl(203 80% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(203 90% 95%));
     --shadow-card: 0 32px 80px hsla(0,0%,0%,0.08);
   }
 
@@ -48,7 +50,9 @@
     --secondary-foreground: 0 0% 80%;
     --muted: 0 0% 70%;
     --muted-foreground: 0 0% 78%;
-    --accent: 0 0% 60%;
+    --accent: 203 100% 62%;
+    --accent-strong: 203 100% 56%;
+    --accent-soft: 203 70% 25%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 0% 84%;
     --destructive-foreground: 0 0% 100%;
@@ -59,8 +63,8 @@
     --glass: 0 0% 12% / 0.82;
     --glass-border: 0 0% 32% / 0.48;
     --glow-black: 0 0 48px hsla(0,0%,100%,0.1);
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 96%), hsl(0 0% 72%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 16%));
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 96%), hsl(203 80% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(203 100% 15%), hsl(203 100% 22%));
     --shadow-card: 0 38px 120px hsla(0,0%,0%,0.28);
   }
 }
@@ -72,7 +76,7 @@
 
   html {
     scroll-behavior: smooth;
-    background: hsl(var(--background));
+    background: radial-gradient(circle at top left, hsla(var(--accent) / 0.08), hsl(var(--background)) 45%);
     color-scheme: light;
   }
 
@@ -90,9 +94,12 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-image: radial-gradient(circle, hsla(0, 0%, 0%, 0.03) 1px, transparent 1px);
-    background-size: 24px 24px;
-    opacity: 0.16;
+    background-image:
+      radial-gradient(circle at 15% 10%, hsla(var(--accent) / 0.08) 0%, transparent 24%),
+      radial-gradient(circle at 80% 20%, hsla(0, 0%, 0%, 0.05) 0%, transparent 18%),
+      radial-gradient(circle, hsla(0, 0%, 0%, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 240px 240px, 24px 24px;
+    opacity: 0.72;
   }
 
   button,
@@ -109,9 +116,9 @@
   }
 
   a:hover {
-    opacity: 0.88;
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    opacity: 0.94;
+    color: hsl(var(--accent));
+    text-decoration: none;
   }
 
   h1,
@@ -122,6 +129,10 @@
   h6 {
     letter-spacing: -0.02em;
     line-height: 1.08;
+  }
+
+  h2 {
+    position: relative;
   }
 
   p,
@@ -137,10 +148,10 @@
 
 @layer components {
   .glass-card {
-    background-color: hsl(var(--card) / 0.98);
+    background-color: hsl(var(--card) / 0.96);
     @apply backdrop-blur-3xl border rounded-[1.5rem];
-    border-color: hsl(var(--border) / 0.35);
-    box-shadow: var(--shadow-card);
+    border-color: hsl(var(--border) / 0.28);
+    box-shadow: 0 32px 70px hsla(0,0%,0%,0.08), inset 0 0 0 1px hsla(0,0%,100%,0.04);
   }
 
   .glass-card-hover {
@@ -149,18 +160,21 @@
   }
 
   .glass-card-hover:hover {
-    border-color: hsl(var(--border) / 0.55);
-    box-shadow: 0 38px 120px hsla(0,0%,0%,0.16);
-    transform: translateY(-4px);
+    border-color: hsl(var(--accent) / 0.55);
+    box-shadow: 0 46px 120px hsla(var(--accent) / 0.16), 0 18px 44px hsla(0,0%,0%,0.08);
+    transform: translateY(-6px);
   }
 
   .interactive-btn {
     @apply transition-all duration-300 ease-out;
-    will-change: transform, opacity;
+    will-change: transform, opacity, background-color, border-color;
+    border: 1px solid transparent;
+    background: hsl(var(--accent) / 0.12);
   }
 
   .interactive-btn:hover {
     transform: translateY(-1px) scale(1.02);
+    background: hsl(var(--accent) / 0.18);
   }
 
   .interactive-btn:active {

@@ -13,9 +13,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
         >
           <p className="text-sm font-mono text-primary mb-2">// about me</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            The Story Behind the <span className="gradient-text">Code</span>
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Meet the developer</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -26,10 +24,10 @@ const AboutSection = () => {
             className="space-y-5 text-muted-foreground leading-relaxed"
           >
             <p>
-              It started with curiosity — a single <span className="text-foreground font-medium">competitive programming problem</span> that refused to be solved. Hours turned into days, and that stubborn persistence became the foundation of how I approach everything: with logic, patience, and a drive to understand deeply.
+              Hello! I’m Ujjwal Verma, a Computer Science and Engineering undergraduate at PSIT Kanpur (2024–2028) with a strong passion for problem-solving and software development.
             </p>
             <p>
-              As a <span className="text-foreground font-medium">Codeforces Specialist</span> with 100+ problems solved across platforms, I've trained my mind to think in algorithms. But I realized that problem-solving shouldn't stop at the terminal — it should reach users, build products, and create impact.
+              I started with competitive programming, where solving challenging problems shaped my ability to think logically and write efficient code. As a Codeforces Specialist with 300+ problems solved, I’ve built a solid foundation in Data Structures and Algorithms using C++ and Python.
             </p>
           </motion.div>
 
@@ -40,10 +38,10 @@ const AboutSection = () => {
             className="space-y-5 text-muted-foreground leading-relaxed"
           >
             <p>
-              That's when I dove into <span className="text-foreground font-medium">full-stack development</span>. The same discipline that helps me optimize a O(n²) solution to O(n log n) now helps me architect clean, scalable web applications. Every component I build carries that same rigor.
+              To take my skills beyond problem-solving, I’m exploring full-stack web development, focusing on building scalable and user-friendly applications.
             </p>
             <p>
-              Currently pursuing <span className="text-foreground font-medium">B.Tech in Computer Science</span> at PSIT Kanpur (2024–2028), I'm on a mission to bridge the gap between algorithmic thinking and real-world software engineering — one project at a time.
+              I’m driven to bridge the gap between algorithmic thinking and real-world software engineering, and I’m always open to learning, building, and collaborating.
             </p>
           </motion.div>
         </div>

@@ -1,14 +1,17 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { motion } from "framer-motion";
-import { Code2, FileCode, Globe, GitBranch, Cpu, Terminal } from "lucide-react";
+import { Code2, FileCode, Globe, GitBranch, Cpu, Terminal, Layers, Palette, Smartphone, Rocket } from "lucide-react";
 
 const skills = [
-  { name: "C++", icon: Code2, level: 90, color: "from-blue-500 to-blue-600" },
-  { name: "Python", icon: FileCode, level: 75, color: "from-yellow-500 to-green-500" },
-  { name: "JavaScript", icon: Terminal, level: 80, color: "from-yellow-400 to-yellow-500" },
-  { name: "HTML & CSS", icon: Globe, level: 85, color: "from-orange-500 to-pink-500" },
-  { name: "Git & GitHub", icon: GitBranch, level: 80, color: "from-gray-400 to-gray-500" },
-  { name: "DSA & Problem Solving", icon: Cpu, level: 92, color: "from-primary to-accent" },
+  { name: "TypeScript", icon: Code2, level: 88, color: "from-sky-500 to-indigo-500" },
+  { name: "React", icon: Layers, level: 87, color: "from-cyan-500 to-blue-500" },
+  { name: "Tailwind CSS", icon: Palette, level: 84, color: "from-cyan-400 to-blue-500" },
+  { name: "Responsive Design", icon: Smartphone, level: 90, color: "from-fuchsia-500 to-pink-500" },
+  { name: "API Integration", icon: Globe, level: 82, color: "from-green-500 to-teal-500" },
+  { name: "Web Performance", icon: Rocket, level: 80, color: "from-amber-500 to-orange-500" },
+  { name: "JavaScript", icon: Terminal, level: 85, color: "from-yellow-400 to-yellow-500" },
+  { name: "HTML & CSS", icon: Globe, level: 88, color: "from-orange-500 to-pink-500" },
+  { name: "Git & GitHub", icon: GitBranch, level: 82, color: "from-gray-400 to-gray-500" },
 ];
 
 const SkillsSection = () => {

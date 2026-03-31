@@ -6,7 +6,7 @@ import { Trophy, Target, Zap, TrendingUp } from "lucide-react";
 const CompetitiveSection = () => {
   const { ref, isVisible } = useScrollReveal();
   const rating = useCountUp(1421, 2000, isVisible);
-  const problems = useCountUp(100, 2000, isVisible);
+  const problems = useCountUp(300, 2000, isVisible);
 
   const stats = [
     { icon: Trophy, label: "Codeforces Rating", value: rating.toString(), suffix: " (Max)", highlight: true },
@@ -32,12 +32,13 @@ const CompetitiveSection = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {stats.map((stat, i) => (
-            <motion.div
+            <motion.a
               key={stat.label}
+              href="#profiles"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`glass-card-hover p-6 text-center ${stat.highlight ? "glow-border" : ""}`}
+              className={`glass-card-hover p-6 text-center ${stat.highlight ? "glow-border" : ""} cursor-pointer transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary`}
             >
               <div className="inline-flex p-3 rounded-xl bg-primary/10 mb-4">
                 <stat.icon className="w-6 h-6 text-primary" />
@@ -46,7 +47,7 @@ const CompetitiveSection = () => {
                 {stat.value}{stat.suffix}
               </div>
               <p className="text-sm text-muted-foreground">{stat.label}</p>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 

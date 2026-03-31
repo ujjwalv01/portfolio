@@ -5,6 +5,7 @@ import { useTheme } from "@/hooks/useTheme";
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
+  { label: "Profiles", href: "#profiles" },
   { label: "Projects", href: "#projects" },
   { label: "Competitive", href: "#competitive" },
   { label: "Contact", href: "#contact" },

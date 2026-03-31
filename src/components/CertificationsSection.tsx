@@ -8,18 +8,21 @@ const certs = [
     title: "J.P. Morgan Software Engineering Simulation",
     org: "J.P. Morgan Chase & Co.",
     type: "Virtual Experience",
+    url: "https://drive.google.com/file/d/1I2F5rqzgi5g73cKwYev9q8Tyf2f9Uj9-/view?usp=drive_link",
   },
   {
     icon: Briefcase,
     title: "Deloitte Technology Job Simulation",
     org: "Deloitte",
     type: "Virtual Experience",
+    url: "https://drive.google.com/file/d/1taMJFkJG1P5RwvPwXDHWDL4v7WcB_cFP/view?usp=drive_link",
   },
   {
     icon: GraduationCap,
     title: "Google AI Agents Course",
     org: "Google",
     type: "Certification",
+    url: "https://www.kaggle.com/certification/badges/ujjwalv01/105",
   },
 ];
 
@@ -57,9 +60,19 @@ const CertificationsSection = () => {
                 <h3 className="font-semibold text-foreground text-sm md:text-base">{cert.title}</h3>
                 <p className="text-muted-foreground text-sm">{cert.org}</p>
               </div>
-              <span className="hidden sm:inline-block px-3 py-1 rounded-md bg-secondary text-xs font-mono text-muted-foreground shrink-0">
-                {cert.type}
-              </span>
+              <div className="flex items-center gap-3">
+                <span className="hidden sm:inline-block px-3 py-1 rounded-md bg-secondary text-xs font-mono text-muted-foreground shrink-0">
+                  {cert.type}
+                </span>
+                <a
+                  href={cert.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-semibold text-primary transition hover:bg-primary/10"
+                >
+                  View Certification
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -48,8 +48,16 @@ const ProjectsSection = () => {
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
-                    {[1, 2, 3, 4].map((n) => (
-                      <div key={n} className="aspect-square rounded-lg bg-secondary animate-pulse" />
+                    {[
+                      { emoji: "🎧", label: "Buds" },
+                      { emoji: "👕", label: "Clothes" },
+                      { emoji: "📱", label: "Electronics" },
+                      { emoji: "🏠", label: "Household" },
+                    ].map((item) => (
+                      <div key={item.label} className="aspect-square rounded-lg bg-secondary flex flex-col items-center justify-center gap-1">
+                        <span className="text-xl">{item.emoji}</span>
+                        <span className="text-[10px] text-muted-foreground font-medium">{item.label}</span>
+                      </div>
                     ))}
                   </div>
                   <div className="h-8 rounded-lg w-full flex items-center justify-center text-xs font-medium text-primary-foreground" style={{ backgroundImage: "var(--gradient-primary)" }}>

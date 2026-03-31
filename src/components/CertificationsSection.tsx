@@ -1,6 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { motion } from "framer-motion";
-import { Award, Briefcase, GraduationCap } from "lucide-react";
+import { Award, Briefcase, ExternalLink, GraduationCap } from "lucide-react";
 
 const certs = [
   {
@@ -8,18 +8,21 @@ const certs = [
     title: "J.P. Morgan Software Engineering Simulation",
     org: "J.P. Morgan Chase & Co.",
     type: "Virtual Experience",
+    certLink: "/certificates/jpmc_certification.pdf",
   },
   {
     icon: Briefcase,
     title: "Deloitte Technology Job Simulation",
     org: "Deloitte",
     type: "Virtual Experience",
+    certLink: "/certificates/deloite_certification.pdf",
   },
   {
     icon: GraduationCap,
     title: "Google AI Agents Course",
     org: "Google",
     type: "Certification",
+    certLink: "https://www.kaggle.com/certification/badges/ujjwalv01/105",
   },
 ];
 
@@ -57,9 +60,20 @@ const CertificationsSection = () => {
                 <h3 className="font-semibold text-foreground text-sm md:text-base">{cert.title}</h3>
                 <p className="text-muted-foreground text-sm">{cert.org}</p>
               </div>
-              <span className="hidden sm:inline-block px-3 py-1 rounded-md bg-secondary text-xs font-mono text-muted-foreground shrink-0">
-                {cert.type}
-              </span>
+              <div className="flex items-center gap-3 shrink-0">
+                <span className="hidden sm:inline-block px-3 py-1 rounded-md bg-secondary text-xs font-mono text-muted-foreground">
+                  {cert.type}
+                </span>
+                <a
+                  href={cert.certLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-primary-foreground transition-all hover:scale-105"
+                  style={{ backgroundImage: "var(--gradient-primary)" }}
+                >
+                  <ExternalLink className="w-3.5 h-3.5" /> View
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>

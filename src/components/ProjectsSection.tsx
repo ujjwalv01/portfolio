@@ -34,7 +34,7 @@ const ProjectsSection = () => {
                 <div className="bg-secondary/80 px-4 py-2 flex items-center gap-2">
                   <div className="flex gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-destructive/60" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-accent/60" />
                     <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
                   </div>
                   <span className="text-xs font-mono text-muted-foreground ml-2">e-commerce-app</span>

@@ -1,6 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Send, ArrowUp } from "lucide-react";
+import { Mail, Github, Linkedin, Twitter, Send, ArrowUp } from "lucide-react";
 import { useState } from "react";
 
 const ContactSection = () => {
@@ -75,6 +75,21 @@ const ContactSection = () => {
               <div>
                 <p className="text-xs text-muted-foreground font-mono">LinkedIn</p>
                 <p className="text-sm font-medium text-foreground">Ujjwal Verma</p>
+              </div>
+            </a>
+
+            <a
+              href="https://x.com/Ujjwal_v01"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card-hover p-5 flex items-center gap-4 group"
+            >
+              <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <Twitter className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground font-mono">X</p>
+                <p className="text-sm font-medium text-foreground">@Ujjwal_v01</p>
               </div>
             </a>
           </motion.div>

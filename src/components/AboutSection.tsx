@@ -46,18 +46,6 @@ const AboutSection = () => {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-10 flex flex-wrap gap-4"
-        >
-          {["B.Tech CSE @ PSIT Kanpur", "Kanpur, India", "2024 – 2028"].map((item) => (
-            <span key={item} className="px-4 py-2 rounded-lg bg-secondary text-sm font-mono text-muted-foreground">
-              {item}
-            </span>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

@@ -13,16 +13,24 @@ const navItems = [
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const [progress, setProgress] = useState(0);
   const { isDark, toggle } = useTheme();
 
   useEffect(() => {
+    let lastScroll = window.scrollY;
+
     const onScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const currentScroll = window.scrollY;
+      setScrolled(currentScroll > 20);
+      setHidden(currentScroll > lastScroll && currentScroll > 120);
+      lastScroll = currentScroll;
+
       const total = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(total > 0 ? (window.scrollY / total) * 100 : 0);
+      setProgress(total > 0 ? (currentScroll / total) * 100 : 0);
     };
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -39,12 +47,19 @@ const Navbar = () => {
 
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? "glass-card border-b border-border/40 py-3" : "py-5 bg-transparent"
-        }`}
+          scrolled
+            ? "backdrop-blur-xl bg-card/80 border-b border-border/40 py-3 shadow-xl"
+            : "bg-transparent py-5"
+        } ${hidden ? "-translate-y-full" : "translate-y-0"}`}
       >
         <div className="container mx-auto flex items-center justify-between px-4">
-          <a href="#" className="font-mono font-bold text-lg gradient-text">
-            {"<UV />"}
+          <a href="#about" className="inline-flex items-center gap-3">
+            <span className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-white/5 shadow-sm text-sm font-bold uppercase tracking-[0.3em] text-foreground">
+              UV
+            </span>
+            <span className="text-sm font-semibold uppercase tracking-[0.22em] text-foreground">
+              Ujjwal
+            </span>
           </a>
 
           {/* Desktop */}
@@ -53,7 +68,7 @@ const Navbar = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary after:transition-all hover:after:w-full"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all px-3 py-2 rounded-2xl bg-secondary/70 border border-border/40 hover:bg-secondary/90"
               >
                 {item.label}
               </a>

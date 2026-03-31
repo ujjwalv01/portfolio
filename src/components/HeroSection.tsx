@@ -1,14 +1,45 @@
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { useTypingEffect } from "@/hooks/useTypingEffect";
 import { ArrowDown, ExternalLink } from "lucide-react";
 import ParticleBackground from "./ParticleBackground";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  const [curtainState, setCurtainState] = useState<"idle" | "closing" | "opening">("idle");
+  const closeTimerRef = useRef<number | null>(null);
+  const openTimerRef = useRef<number | null>(null);
   const { displayed, done } = useTypingEffect("Turning Logic Into Scalable Digital Solutions", 50, 300);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
+      if (openTimerRef.current) window.clearTimeout(openTimerRef.current);
+    };
+  }, []);
+
+  const handleScrollAction = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    if (curtainState !== "idle") return;
+
+    setCurtainState("closing");
+    closeTimerRef.current = window.setTimeout(() => {
+      const target = document.querySelector("#about");
+      target?.scrollIntoView({ behavior: "smooth" });
+      setCurtainState("opening");
+
+      openTimerRef.current = window.setTimeout(() => {
+        setCurtainState("idle");
+      }, 460);
+    }, 420);
+  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <ParticleBackground />
+      <div className={`page-curtain ${curtainState !== "idle" ? curtainState : ""}`}>
+        <div className="curtain-panel top-panel" />
+        <div className="curtain-panel bottom-panel" />
+      </div>
       {/* Gradient orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse_glow" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse_glow" style={{ animationDelay: "1s" }} />
@@ -48,14 +79,14 @@ const HeroSection = () => {
         >
           <a
             href="#projects"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-medium text-primary-foreground transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-medium text-primary-foreground transition-all duration-300 hover:scale-105 interactive-btn"
             style={{ backgroundImage: "var(--gradient-primary)" }}
           >
             View Projects <ExternalLink className="w-4 h-4" />
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-medium border border-border bg-card/50 text-foreground hover:bg-card transition-all duration-300 hover:scale-105 hover:border-primary/40"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-medium border border-border bg-card/50 text-foreground hover:bg-card transition-all duration-300 hover:scale-105 hover:border-primary/40 interactive-btn"
           >
             Contact Me
           </a>
@@ -67,8 +98,12 @@ const HeroSection = () => {
           transition={{ delay: 3.5, duration: 0.5 }}
           className="mt-20"
         >
-          <a href="#about" className="inline-flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-            <span className="text-xs font-mono">scroll down</span>
+          <a
+            href="#about"
+            onClick={handleScrollAction}
+            className="inline-flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <span className="text-xs font-mono">turn the page</span>
             <ArrowDown className="w-4 h-4 animate-float" />
           </a>
         </motion.div>

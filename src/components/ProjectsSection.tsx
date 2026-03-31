@@ -21,12 +21,14 @@ const ProjectsSection = () => {
         </motion.div>
 
         {/* Featured project */}
-        <motion.div
+        <motion.article
           initial={{ opacity: 0, y: 40 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          whileHover={{ y: -4 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="glass-card-hover overflow-hidden"
+          className="group glass-card-hover overflow-hidden relative"
         >
+          <div className="section-overlay rounded-[1.25rem]" />
           <div className="grid md:grid-cols-2 gap-0">
             {/* Mockup */}
             <div className="p-8 md:p-10 flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
@@ -35,7 +37,7 @@ const ProjectsSection = () => {
                   <div className="flex gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-destructive/60" />
                     <span className="w-2.5 h-2.5 rounded-full bg-primary/60" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/40" />
                   </div>
                   <span className="text-xs font-mono text-muted-foreground ml-2">e-commerce-app</span>
                 </div>
@@ -86,7 +88,7 @@ const ProjectsSection = () => {
                   href="https://github.com/ujjwalv01/e-commerce-app.git"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border bg-card/50 text-sm font-medium text-foreground hover:bg-card hover:border-primary/40 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border bg-card/50 text-sm font-medium text-foreground hover:bg-card hover:border-primary/40 transition-all interactive-btn"
                 >
                   <Github className="w-4 h-4" /> Source Code
                 </a>
@@ -94,7 +96,7 @@ const ProjectsSection = () => {
                   href="https://github.com/ujjwalv01/e-commerce-app.git"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium text-primary-foreground transition-all hover:scale-105"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium text-primary-foreground transition-all hover:scale-105 interactive-btn"
                   style={{ backgroundImage: "var(--gradient-primary)" }}
                 >
                   <ExternalLink className="w-4 h-4" /> View Project
@@ -102,14 +104,16 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.article>
 
-        <motion.div
+        <motion.article
           initial={{ opacity: 0, y: 40 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          whileHover={{ y: -4 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="glass-card-hover overflow-hidden mt-10"
+          className="group glass-card-hover overflow-hidden relative mt-10"
         >
+          <div className="section-overlay rounded-[1.25rem]" />
           <div className="grid md:grid-cols-2 gap-0">
             {/* Mockup */}
             <div className="p-8 md:p-10 flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
@@ -118,7 +122,7 @@ const ProjectsSection = () => {
                   <div className="flex gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-destructive/60" />
                     <span className="w-2.5 h-2.5 rounded-full bg-primary/60" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/40" />
                   </div>
                   <span className="text-xs font-mono text-muted-foreground ml-2">portfolio</span>
                 </div>
@@ -169,7 +173,7 @@ const ProjectsSection = () => {
                   href="https://github.com/ujjwalv01/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border bg-card/50 text-sm font-medium text-foreground hover:bg-card hover:border-primary/40 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border bg-card/50 text-sm font-medium text-foreground hover:bg-card hover:border-primary/40 transition-all interactive-btn"
                 >
                   <Github className="w-4 h-4" /> Source Code
                 </a>
@@ -177,7 +181,7 @@ const ProjectsSection = () => {
                   href="https://github.com/ujjwalv01/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium text-primary-foreground transition-all hover:scale-105"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium text-primary-foreground transition-all hover:scale-105 interactive-btn"
                   style={{ backgroundImage: "var(--gradient-primary)" }}
                 >
                   <ExternalLink className="w-4 h-4" /> View Project
@@ -185,7 +189,7 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.article>
       </div>
     </section>
   );

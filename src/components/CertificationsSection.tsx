@@ -51,16 +51,18 @@ const CertificationsSection = () => {
               initial={{ opacity: 0, x: -30 }}
               animate={isVisible ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="glass-card-hover p-5 md:p-6 flex items-center gap-5"
+              className="glass-card-hover p-4 sm:p-5 md:p-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5"
             >
-              <div className="p-3 rounded-xl bg-primary/10 shrink-0">
-                <cert.icon className="w-5 h-5 text-primary" />
+              <div className="flex items-start sm:items-center gap-4 sm:gap-5 flex-1 w-full min-w-0">
+                <div className="p-3 rounded-xl bg-primary/10 shrink-0 mt-0.5 sm:mt-0">
+                  <cert.icon className="w-5 h-5 text-primary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-foreground text-sm md:text-base leading-snug break-words">{cert.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm mt-1">{cert.org}</p>
+                </div>
               </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-foreground text-sm md:text-base">{cert.title}</h3>
-                <p className="text-muted-foreground text-sm">{cert.org}</p>
-              </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 w-full sm:w-auto mt-2 sm:mt-0">
                 <span className="hidden sm:inline-block px-3 py-1 rounded-md bg-secondary text-xs font-mono text-muted-foreground shrink-0">
                   {cert.type}
                 </span>
@@ -68,7 +70,7 @@ const CertificationsSection = () => {
                   href={cert.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-semibold text-primary transition hover:bg-primary/10"
+                  className="inline-flex flex-1 sm:flex-none items-center justify-center rounded-full border border-primary/20 bg-primary/5 px-4 py-2.5 sm:py-2 text-xs font-semibold text-primary transition hover:bg-primary/10 text-center"
                 >
                   View Certification
                 </a>

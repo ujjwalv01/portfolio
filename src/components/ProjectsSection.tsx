@@ -83,7 +83,7 @@ const ProjectsSection = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 <a
                   href="https://github.com/ujjwalv01/e-commerce-app.git"
                   target="_blank"
@@ -168,7 +168,7 @@ const ProjectsSection = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 <a
                   href="https://github.com/ujjwalv01/portfolio"
                   target="_blank"

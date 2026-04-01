@@ -37,14 +37,14 @@ const ContactSection = () => {
           >
             <a
               href="mailto:ujjwalverma010305@gmail.com"
-              className="glass-card-hover p-5 flex items-center gap-4 group"
+              className="glass-card-hover p-4 sm:p-5 flex items-center gap-4 group"
             >
-              <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+              <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
                 <Mail className="w-5 h-5 text-primary" />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="text-xs text-muted-foreground font-mono">Email</p>
-                <p className="text-sm font-medium text-foreground">ujjwalverma010305@gmail.com</p>
+                <p className="text-sm font-medium text-foreground break-all sm:break-normal">ujjwalverma010305@gmail.com</p>
               </div>
             </a>
 
@@ -52,14 +52,14 @@ const ContactSection = () => {
               href="https://github.com/ujjwalv01"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-card-hover p-5 flex items-center gap-4 group"
+              className="glass-card-hover p-4 sm:p-5 flex items-center gap-4 group"
             >
-              <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+              <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
                 <Github className="w-5 h-5 text-primary" />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="text-xs text-muted-foreground font-mono">GitHub</p>
-                <p className="text-sm font-medium text-foreground">github.com/ujjwalv01</p>
+                <p className="text-sm font-medium text-foreground truncate">github.com/ujjwalv01</p>
               </div>
             </a>
 
@@ -67,14 +67,14 @@ const ContactSection = () => {
               href="https://linkedin.com/in/ujjwal-verma-cse"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-card-hover p-5 flex items-center gap-4 group"
+              className="glass-card-hover p-4 sm:p-5 flex items-center gap-4 group"
             >
-              <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+              <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
                 <Linkedin className="w-5 h-5 text-primary" />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="text-xs text-muted-foreground font-mono">LinkedIn</p>
-                <p className="text-sm font-medium text-foreground">Ujjwal Verma</p>
+                <p className="text-sm font-medium text-foreground truncate">Ujjwal Verma</p>
               </div>
             </a>
 
@@ -82,14 +82,14 @@ const ContactSection = () => {
               href="https://x.com/Ujjwal_v01"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-card-hover p-5 flex items-center gap-4 group"
+              className="glass-card-hover p-4 sm:p-5 flex items-center gap-4 group"
             >
-              <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+              <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
                 <Twitter className="w-5 h-5 text-primary" />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="text-xs text-muted-foreground font-mono">X</p>
-                <p className="text-sm font-medium text-foreground">@Ujjwal_v01</p>
+                <p className="text-sm font-medium text-foreground truncate">@Ujjwal_v01</p>
               </div>
             </a>
           </motion.div>

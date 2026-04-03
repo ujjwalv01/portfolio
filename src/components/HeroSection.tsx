@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { useTypingEffect } from "@/hooks/useTypingEffect";
-import { ArrowDown, ExternalLink } from "lucide-react";
+import { ArrowDown, ExternalLink, Download } from "lucide-react";
 import ParticleBackground from "./ParticleBackground";
 import { motion } from "framer-motion";
 
@@ -44,7 +44,7 @@ const HeroSection = () => {
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse_glow" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse_glow" style={{ animationDelay: "1s" }} />
 
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 container mx-auto px-4 text-center pt-24 md:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -79,16 +79,32 @@ const HeroSection = () => {
         >
           <a
             href="#projects"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-medium text-primary-foreground transition-all duration-300 hover:scale-105 interactive-btn"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base rounded-xl font-medium text-primary-foreground transition-all duration-300 hover:scale-105 interactive-btn"
             style={{ backgroundImage: "var(--gradient-primary)" }}
           >
             View Projects <ExternalLink className="w-4 h-4" />
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-medium border border-border bg-card/50 text-foreground hover:bg-card transition-all duration-300 hover:scale-105 hover:border-primary/40 interactive-btn"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base rounded-xl font-medium border border-border bg-card/50 text-foreground hover:bg-card transition-all duration-300 hover:scale-105 hover:border-primary/40 interactive-btn"
           >
             Contact Me
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3.2, duration: 0.5 }}
+          className="flex justify-center mt-6"
+        >
+          <a
+            href="https://drive.google.com/file/d/1AIgD792xOUPS1h2ZN0PhSXrijEvsQIHv/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base rounded-xl font-medium border border-border bg-card/50 text-foreground hover:bg-card transition-all duration-300 hover:scale-105 hover:border-primary/40 interactive-btn"
+          >
+            Download Resume <Download className="w-4 h-4" />
           </a>
         </motion.div>
 

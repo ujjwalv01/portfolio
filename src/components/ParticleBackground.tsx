@@ -66,6 +66,14 @@ const ParticleBackground = () => {
       };
     };
 
+    let accentHsl = "203, 100%, 52%";
+    const updateThemeColors = () => {
+      const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+      if (accent) {
+        accentHsl = accent.replace(/\s+/g, ', ');
+      }
+    };
+
     const resize = () => {
       pixelRatio = window.devicePixelRatio || 1;
       const { width, height } = getCanvasSize();
@@ -74,6 +82,7 @@ const ParticleBackground = () => {
       canvas.style.width = "100%";
       canvas.style.height = "100%";
       ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      updateThemeColors();
       resetParticles();
     };
 
@@ -130,10 +139,7 @@ const ParticleBackground = () => {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
       const isDarkTheme = getThemeMode() === "dark";
-      const baseColor = isDarkTheme ? "100%" : "0%";
-      const pointerColor = isDarkTheme ? "100%" : "0%";
-      const connectionColor = isDarkTheme ? "100%" : "0%";
-      const rippleColor = isDarkTheme ? "100%" : "0%";
+      const themeL = isDarkTheme ? "100%" : "0%";
 
       ctx.clearRect(0, 0, width, height);
       ctx.fillStyle = "transparent";
@@ -142,8 +148,8 @@ const ParticleBackground = () => {
       if (pointer.active && pointer.moved) {
         ctx.beginPath();
         ctx.arc(pointer.x, pointer.y, 90, 0, Math.PI * 2);
-        ctx.strokeStyle = `hsla(0, 0%, ${pointerColor}, 0.08)`;
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = `hsla(${accentHsl}, 0.2)`;
+        ctx.lineWidth = 1.5;
         ctx.stroke();
       }
 
@@ -162,7 +168,19 @@ const ParticleBackground = () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(0, 0%, ${baseColor}, ${p.alpha})`;
+        
+        const dxP = pointer.x - p.x;
+        const dyP = pointer.y - p.y;
+        const distP = pointer.active ? Math.hypot(dxP, dyP) : 999;
+        
+        if (distP < 140) {
+           ctx.shadowBlur = 15;
+           ctx.shadowColor = `hsla(${accentHsl}, 0.8)`;
+           ctx.fillStyle = `hsla(${accentHsl}, ${p.alpha + 0.4})`;
+        } else {
+           ctx.shadowBlur = 0;
+           ctx.fillStyle = `hsla(0, 0%, ${themeL}, ${p.alpha})`;
+        }
         ctx.fill();
 
         for (let j = i + 1; j < particles.length; j++) {
@@ -174,10 +192,17 @@ const ParticleBackground = () => {
           if (dist < threshold) {
             const connectionAlpha = (1 - dist / threshold) * 0.13;
             ctx.beginPath();
+            ctx.shadowBlur = 0; // Reset shadow for lines
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `hsla(0, 0%, ${connectionColor}, ${connectionAlpha})`;
-            ctx.lineWidth = 0.45;
+            
+            if (distP < 140 && pointer.active && Math.hypot(pointer.x - p2.x, pointer.y - p2.y) < 140) {
+              ctx.strokeStyle = `hsla(${accentHsl}, ${connectionAlpha * 3})`;
+              ctx.lineWidth = 0.8;
+            } else {
+              ctx.strokeStyle = `hsla(0, 0%, ${themeL}, ${connectionAlpha})`;
+              ctx.lineWidth = 0.45;
+            }
             ctx.stroke();
           }
         }
@@ -189,8 +214,9 @@ const ParticleBackground = () => {
 
       ripples.forEach((r) => {
         ctx.beginPath();
+        ctx.shadowBlur = 0;
         ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `hsla(0, 0%, ${rippleColor}, ${r.alpha * 0.35})`;
+        ctx.strokeStyle = `hsla(${accentHsl}, ${r.alpha * 0.35})`;
         ctx.lineWidth = 1;
         ctx.stroke();
       });

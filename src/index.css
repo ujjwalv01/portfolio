@@ -247,8 +247,8 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-primary);
+    @apply bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x;
+    background-image: linear-gradient(to right, hsl(var(--foreground)), hsl(var(--accent)), hsl(var(--foreground)));
   }
 
   .glow-border {

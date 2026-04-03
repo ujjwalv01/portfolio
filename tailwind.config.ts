@@ -113,6 +113,20 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
         },
+        "gradient-x": {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+        "border-glow": {
+          "0%, 100%": { "border-color": "hsl(var(--accent) / 0.2)" },
+          "50%": { "border-color": "hsl(var(--accent) / 0.8)", "box-shadow": "0 0 15px hsl(var(--accent) / 0.5)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -125,6 +139,8 @@ export default {
         pulse_glow: "pulse_glow 2s ease-in-out infinite",
         "counter-up": "counter-up 0.5s ease-out forwards",
         blink: "blink 1s step-end infinite",
+        "gradient-x": "gradient-x 5s ease infinite",
+        "border-glow": "border-glow 2.5s ease infinite",
       },
     },
   },

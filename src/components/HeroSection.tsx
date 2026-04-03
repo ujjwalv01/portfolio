@@ -49,10 +49,11 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-6"
+          className="mb-6 relative inline-block group"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-mono">
-            <span className="neon-dot" />
+          <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-700 animate-pulse_glow" />
+          <span className="relative z-10 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-accent/30 text-foreground text-sm font-mono backdrop-blur-sm shadow-[0_0_15px_hsla(var(--accent)/0.15)] group-hover:shadow-[0_0_25px_hsla(var(--accent)/0.25)] transition-shadow duration-500">
+            <span className="neon-dot animate-pulse" />
             Available for opportunities
           </span>
         </motion.div>
@@ -79,14 +80,15 @@ const HeroSection = () => {
         >
           <a
             href="#projects"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base rounded-xl font-medium text-primary-foreground transition-all duration-300 hover:scale-105 interactive-btn"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base rounded-xl font-medium text-primary-foreground transition-all duration-300 hover:scale-105 interactive-btn relative overflow-hidden"
             style={{ backgroundImage: "var(--gradient-primary)" }}
           >
-            View Projects <ExternalLink className="w-4 h-4" />
+            <span className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+            <span className="relative flex items-center gap-2">View Projects <ExternalLink className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300" /></span>
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base rounded-xl font-medium border border-border bg-card/50 text-foreground hover:bg-card transition-all duration-300 hover:scale-105 hover:border-primary/40 interactive-btn"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base rounded-xl font-medium border border-border bg-card/50 text-foreground hover:bg-card hover:border-accent hover:shadow-[0_0_15px_hsla(var(--accent)/0.3)] transition-all duration-300 hover:scale-105 interactive-btn"
           >
             Contact Me
           </a>
@@ -102,9 +104,9 @@ const HeroSection = () => {
             href="https://drive.google.com/file/d/1AIgD792xOUPS1h2ZN0PhSXrijEvsQIHv/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base rounded-xl font-medium border border-border bg-card/50 text-foreground hover:bg-card transition-all duration-300 hover:scale-105 hover:border-primary/40 interactive-btn"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base rounded-xl font-medium border border-border bg-card/50 text-foreground hover:bg-card hover:border-accent hover:shadow-[0_0_15px_hsla(var(--accent)/0.3)] transition-all duration-300 hover:scale-105 interactive-btn"
           >
-            Download Resume <Download className="w-4 h-4" />
+            Download Resume <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
           </a>
         </motion.div>
 
@@ -117,10 +119,13 @@ const HeroSection = () => {
           <a
             href="#about"
             onClick={handleScrollAction}
-            className="inline-flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="group inline-flex flex-col items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
           >
-            <span className="text-xs font-mono">turn the page</span>
-            <ArrowDown className="w-4 h-4 animate-float" />
+            <span className="text-xs font-mono group-hover:animate-pulse">turn the page</span>
+            <div className="relative">
+              <div className="absolute inset-0 bg-accent/20 blur-md rounded-full group-hover:animate-pulse_glow opacity-0 group-hover:opacity-100 transition-opacity" />
+              <ArrowDown className="w-4 h-4 animate-float relative" />
+            </div>
           </a>
         </motion.div>
       </div>

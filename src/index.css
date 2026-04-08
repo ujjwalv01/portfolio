@@ -149,7 +149,7 @@
 @layer components {
   .glass-card {
     background-color: hsl(var(--card) / 0.96);
-    @apply backdrop-blur-3xl border rounded-[1.5rem];
+    @apply backdrop-blur-3xl border rounded-[1.25rem];
     border-color: hsl(var(--border) / 0.28);
     box-shadow: 0 32px 70px hsla(0,0%,0%,0.08), inset 0 0 0 1px hsla(0,0%,100%,0.04);
   }

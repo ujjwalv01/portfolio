@@ -31,7 +31,7 @@ const ProjectsSection = () => {
           <div className="section-overlay rounded-[1.25rem]" />
           <div className="grid md:grid-cols-2 gap-0">
             {/* Mockup */}
-            <div className="p-8 md:p-10 flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
+            <div className="p-6 sm:p-8 md:p-10 flex flex-col items-start md:items-center md:justify-center bg-gradient-to-br from-primary/5 to-accent/5">
               <div className="w-full max-w-sm rounded-xl border border-border/40 overflow-hidden shadow-lg">
                 <div className="bg-secondary/80 px-4 py-2 flex items-center gap-2">
                   <div className="flex gap-1.5">
@@ -70,7 +70,8 @@ const ProjectsSection = () => {
             </div>
 
             {/* Info */}
-            <div className="p-8 md:p-10 flex flex-col justify-center">
+            <div className="p-6 sm:p-8 md:p-10 flex flex-col items-start justify-center">
+              <div className="w-full max-w-sm">
               <span className="text-xs font-mono text-primary mb-3">FEATURED PROJECT</span>
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">E-Commerce Website</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -104,6 +105,7 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
+          </div>
         </motion.article>
 
         <motion.article
@@ -116,7 +118,7 @@ const ProjectsSection = () => {
           <div className="section-overlay rounded-[1.25rem]" />
           <div className="grid md:grid-cols-2 gap-0">
             {/* Mockup */}
-            <div className="p-8 md:p-10 flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
+            <div className="p-6 sm:p-8 md:p-10 flex flex-col items-start md:items-center md:justify-center bg-gradient-to-br from-primary/5 to-accent/5">
               <div className="w-full max-w-sm rounded-xl border border-border/40 overflow-hidden shadow-lg">
                 <div className="bg-secondary/80 px-4 py-2 flex items-center gap-2">
                   <div className="flex gap-1.5">
@@ -155,7 +157,8 @@ const ProjectsSection = () => {
             </div>
 
             {/* Info */}
-            <div className="p-8 md:p-10 flex flex-col justify-center">
+            <div className="p-6 sm:p-8 md:p-10 flex flex-col items-start justify-center">
+              <div className="w-full max-w-sm">
               <span className="text-xs font-mono text-primary mb-3">FEATURED PROJECT</span>
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Portfolio Website</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -189,6 +192,7 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
+          </div>
         </motion.article>
 
         <motion.article
@@ -201,7 +205,7 @@ const ProjectsSection = () => {
           <div className="section-overlay rounded-[1.25rem]" />
           <div className="grid md:grid-cols-2 gap-0">
             {/* Mockup */}
-            <div className="p-8 md:p-10 flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
+            <div className="p-6 sm:p-8 md:p-10 flex flex-col items-start md:items-center md:justify-center bg-gradient-to-br from-primary/5 to-accent/5">
               <div className="w-full max-w-sm rounded-xl border border-border/40 overflow-hidden shadow-lg">
                 <div className="bg-secondary/80 px-4 py-2 flex items-center gap-2">
                   <div className="flex gap-1.5">
@@ -211,49 +215,37 @@ const ProjectsSection = () => {
                   </div>
                   <span className="text-xs font-mono text-muted-foreground ml-2">rival-scan-ai</span>
                 </div>
-                <div className="bg-card p-6 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
-                        <Zap className="w-5 h-5 text-primary" />
-                      </div>
-                      <span className="font-bold text-foreground">RivalScan AI</span>
-                    </div>
-                    <div className="px-2 py-0.5 rounded text-[10px] bg-primary/10 text-primary font-mono animate-pulse">
-                      ANALYZING...
+                <div className="bg-card p-6 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Zap className="w-8 h-8 text-primary" />
+                    <div>
+                      <div className="font-bold text-foreground">RivalScan AI</div>
+                      <div className="text-xs text-muted-foreground">Competitor Analysis</div>
                     </div>
                   </div>
-                  
-                  <div className="relative aspect-video rounded-lg bg-secondary/50 border border-border/40 flex flex-col items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(rgba(var(--primary-rgb), 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--primary-rgb), 0.1) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-                    <Search className="w-8 h-8 text-primary/40 mb-2" />
-                    <div className="w-3/4 h-1.5 bg-secondary rounded-full overflow-hidden">
-                      <motion.div 
-                        className="h-full bg-primary"
-                        animate={{ width: ["0%", "100%", "0%"] }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-2 gap-2">
                     {[
-                      { icon: <BarChart3 className="w-3 h-3" />, label: "SWOT" },
-                      { icon: <Zap className="w-3 h-3" />, label: "Insights" },
-                      { icon: <Search className="w-3 h-3" />, label: "Reports" },
+                      { emoji: <BarChart3 className="w-5 h-5" />, label: "SWOT" },
+                      { emoji: <Zap className="w-5 h-5" />, label: "Insights" },
+                      { emoji: <Search className="w-5 h-5" />, label: "Reports" },
+                      { emoji: <ExternalLink className="w-5 h-5" />, label: "Charts" },
                     ].map((item, i) => (
-                      <div key={i} className="flex flex-col items-center gap-1 p-2 rounded-md bg-secondary/30 border border-border/20">
-                        <span className="text-primary">{item.icon}</span>
-                        <span className="text-[8px] text-muted-foreground uppercase tracking-tight">{item.label}</span>
+                      <div key={i} className="aspect-square rounded-lg bg-secondary flex flex-col items-center justify-center gap-1">
+                        <span className="text-primary">{item.emoji}</span>
+                        <span className="text-[10px] text-muted-foreground font-medium">{item.label}</span>
                       </div>
                     ))}
+                  </div>
+                  <div className="h-8 rounded-lg w-full flex items-center justify-center text-xs font-medium text-primary-foreground" style={{ backgroundImage: "var(--gradient-primary)" }}>
+                    Analyze Now
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Info */}
-            <div className="p-8 md:p-10 flex flex-col justify-center">
+            <div className="p-6 sm:p-8 md:p-10 flex flex-col items-start justify-center">
+              <div className="w-full max-w-sm">
               <span className="text-xs font-mono text-primary mb-3">FEATURED PROJECT</span>
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Rival Scan</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -286,6 +278,7 @@ const ProjectsSection = () => {
                 </a>
               </div>
             </div>
+          </div>
           </div>
         </motion.article>
 

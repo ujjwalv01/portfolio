@@ -4,7 +4,7 @@ A sleek, animated, and highly responsive personal portfolio website built to sho
 
 ## 🚀 Live Demo
 
-*Update this section with your deployed website URL once live!*
+*https://portfolioxujjwxl.vercel.app/*
 
 ## 🛠️ Tech Stack & Tools
 

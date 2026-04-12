@@ -24,6 +24,13 @@ const certs = [
     type: "Certification",
     url: "https://www.kaggle.com/certification/badges/ujjwalv01/105",
   },
+  {
+    icon: GraduationCap,
+    title: "Building with the Claude API",
+    org: "Anthropic",
+    type: "Certification",
+    url: "https://drive.google.com/file/d/1DEF0--pWzs5pf2b8L6SouhcOruv3pTCg/view?usp=drive_link",
+  },
 ];
 
 const CertificationsSection = () => {

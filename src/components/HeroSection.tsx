@@ -72,7 +72,7 @@ const HeroSection = () => {
           className="flex justify-center mt-6"
         >
           <a
-            href="https://drive.google.com/file/d/1B50R7kWwkpdxGtkkDbHY0hsKRf9guAEU/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1AIgD792xOUPS1h2ZN0PhSXrijEvsQIHv/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-3.5 text-sm md:text-base rounded-xl font-medium border border-border bg-card/50 text-foreground hover:bg-card hover:border-accent hover:shadow-[0_0_15px_hsla(var(--accent)/0.3)] transition-all duration-300 hover:scale-105 interactive-btn"

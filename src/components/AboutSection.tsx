@@ -11,9 +11,11 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
+          className="text-center mb-14"
         >
-          <p className="text-sm font-mono text-primary mb-2">// about me</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Meet the developer</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Meet the <span className="gradient-text">developer</span>
+          </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">

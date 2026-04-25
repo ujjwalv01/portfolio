@@ -45,7 +45,6 @@ const CertificationsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-sm font-mono text-primary mb-2">// experience</p>
           <h2 className="text-3xl md:text-4xl font-bold">
             Certifications & <span className="gradient-text">Experience</span>
           </h2>

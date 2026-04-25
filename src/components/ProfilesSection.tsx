@@ -47,7 +47,6 @@ const ProfilesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-sm font-mono text-primary mb-2">// coding profiles</p>
           <h2 className="text-3xl md:text-4xl font-bold">
             Explore the <span className="gradient-text">Performance</span>
           </h2>

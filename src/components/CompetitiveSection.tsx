@@ -24,7 +24,6 @@ const CompetitiveSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-sm font-mono text-primary mb-2">// competitive programming</p>
           <h2 className="text-3xl md:text-4xl font-bold">
             The <span className="gradient-text">Algorithm</span> Mindset
           </h2>

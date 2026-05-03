@@ -77,7 +77,7 @@
   html {
     scroll-behavior: smooth;
     background: radial-gradient(circle at top left, hsla(var(--accent) / 0.08), hsl(var(--background)) 45%);
-    color-scheme: light;
+    color-scheme: dark;
   }
 
   body {

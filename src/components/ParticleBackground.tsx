@@ -40,7 +40,8 @@ const ParticleBackground = () => {
 
     const getParticleCount = (width: number, height: number) => {
       const area = width * height;
-      return Math.min(120, Math.max(45, Math.round(area / 15000)));
+      // Reduced particle count to free up CPU for main animations
+      return Math.min(80, Math.max(30, Math.round(area / 20000)));
     };
 
     const resetParticles = () => {
@@ -174,11 +175,8 @@ const ParticleBackground = () => {
         const distP = pointer.active ? Math.hypot(dxP, dyP) : 999;
         
         if (distP < 140) {
-           ctx.shadowBlur = 15;
-           ctx.shadowColor = `hsla(${accentHsl}, 0.8)`;
            ctx.fillStyle = `hsla(${accentHsl}, ${p.alpha + 0.4})`;
         } else {
-           ctx.shadowBlur = 0;
            ctx.fillStyle = `hsla(0, 0%, ${themeL}, ${p.alpha})`;
         }
         ctx.fill();

@@ -10,7 +10,7 @@ const ContactSection = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <section id="contact" className="section-padding bg-secondary/30">
+    <section id="contact" className="section-padding">
       <div className="container mx-auto max-w-4xl" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -19,7 +19,7 @@ const ContactSection = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Let's <span className="gradient-text">Connect</span>
+            Let's <span className="text-amber-500">Connect</span>
           </h2>
           <p className="text-muted-foreground mt-3 max-w-md mx-auto">
             Have a project in mind or just want to chat? Drop me a message.
@@ -139,8 +139,7 @@ const ContactSection = () => {
             </div>
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-primary-foreground transition-all duration-300 hover:scale-[1.02]"
-              style={{ backgroundImage: "var(--gradient-primary)" }}
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-500 hover:bg-amber-500 hover:text-black transition-all font-medium"
             >
               Send Message <Send className="w-4 h-4" />
             </button>

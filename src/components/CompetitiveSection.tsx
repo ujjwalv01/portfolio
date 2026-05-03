@@ -16,7 +16,7 @@ const CompetitiveSection = () => {
   ];
 
   return (
-    <section id="competitive" className="section-padding bg-secondary/30">
+    <section id="competitive" className="section-padding">
       <div className="container mx-auto max-w-5xl" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -94,7 +94,7 @@ const SkillsSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="skills" className="section-padding bg-secondary/30">
+    <section id="skills" className="section-padding">
       <div className="container mx-auto max-w-4xl" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -103,7 +103,7 @@ const SkillsSection = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Tech <span className="gradient-text">Stack</span>
+            Tech <span className="text-amber-500">Stack</span>
           </h2>
         </motion.div>
 

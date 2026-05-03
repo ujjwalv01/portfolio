@@ -7,14 +7,14 @@ const certs = [
     icon: Briefcase,
     title: "J.P. Morgan Software Engineering Simulation",
     org: "J.P. Morgan Chase & Co.",
-    type: "Virtual Experience",
+    type: "Virtual Internship",
     url: "https://drive.google.com/file/d/1I2F5rqzgi5g73cKwYev9q8Tyf2f9Uj9-/view?usp=drive_link",
   },
   {
     icon: Briefcase,
     title: "Deloitte Technology Job Simulation",
     org: "Deloitte",
-    type: "Virtual Experience",
+    type: "Virtual Internship",
     url: "https://drive.google.com/file/d/1taMJFkJG1P5RwvPwXDHWDL4v7WcB_cFP/view?usp=drive_link",
   },
   {
@@ -37,7 +37,7 @@ const CertificationsSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="section-padding">
+    <section id="certifications" className="section-padding">
       <div className="container mx-auto max-w-4xl" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -46,7 +46,7 @@ const CertificationsSection = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Certifications & <span className="gradient-text">Experience</span>
+            Certifications & <span className="text-amber-500">Experience</span>
           </h2>
         </motion.div>
 
@@ -76,7 +76,7 @@ const CertificationsSection = () => {
                   href={cert.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex flex-1 sm:flex-none items-center justify-center rounded-full border border-primary/20 bg-primary/5 px-4 py-2.5 sm:py-2 text-xs font-semibold text-primary transition hover:bg-primary/10 text-center"
+                  className="inline-flex flex-1 sm:flex-none items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-500 hover:bg-amber-500 hover:text-black transition-all text-sm font-medium text-center"
                 >
                   View Certification
                 </a>

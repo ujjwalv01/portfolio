@@ -14,7 +14,7 @@ const AboutSection = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Meet the <span className="gradient-text">developer</span>
+            Meet the <span className="text-amber-500">developer</span>
           </h2>
         </motion.div>
 

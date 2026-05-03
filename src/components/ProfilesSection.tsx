@@ -39,7 +39,7 @@ const ProfilesSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="profiles" className="section-padding bg-secondary/30">
+    <section id="profiles" className="section-padding">
       <div className="container mx-auto max-w-5xl" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -48,7 +48,7 @@ const ProfilesSection = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Explore the <span className="gradient-text">Performance</span>
+            Coding <span className="text-amber-500">Profiles</span>
           </h2>
         </motion.div>
 
@@ -69,8 +69,8 @@ const ProfilesSection = () => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/10 transition-colors group-hover:bg-primary/20">
-                      <Icon className="w-6 h-6 text-primary" />
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-amber-500/10 transition-colors group-hover:bg-amber-500/20">
+                      <Icon className="w-6 h-6 text-amber-500" />
                     </div>
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-secondary/90 border border-border/50 text-foreground">
                       <Logo />
@@ -78,14 +78,14 @@ const ProfilesSection = () => {
                   </div>
                   <div className="flex items-center justify-between gap-3 mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold">{profile.platform}</h3>
+                      <h3 className="text-xl font-semibold text-amber-500">{profile.platform}</h3>
                       <p className="text-sm text-muted-foreground mt-2">{profile.description}</p>
                     </div>
                     <span className="px-3 py-1 text-xs font-mono rounded-full bg-secondary text-muted-foreground">{profile.badge}</span>
                   </div>
                 </div>
 
-                <div className="mt-6 flex items-center justify-between text-primary font-medium">
+                <div className="mt-6 flex items-center justify-between text-amber-500 font-medium">
                   <span>Visit profile</span>
                   <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </div>

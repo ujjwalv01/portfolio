@@ -47,8 +47,8 @@ const Navbar = () => {
       <nav
         className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-fit ${
           scrolled
-            ? "top-4 backdrop-blur-2xl bg-[#0a0a0a]/90 border border-white/10 shadow-2xl rounded-full py-2.5 px-6"
-            : "top-6 backdrop-blur-2xl bg-[#0a0a0a]/80 border border-white/10 rounded-full py-3 px-8"
+            ? "top-4 backdrop-blur-xl bg-[#0a0a0a]/90 border border-white/10 shadow-2xl rounded-full py-2.5 px-6"
+            : "top-6 backdrop-blur-xl bg-[#0a0a0a]/80 border border-white/10 rounded-full py-3 px-8"
         } ${hidden ? "-translate-y-[200%]" : "translate-y-0"}`}
       >
         <div className="flex items-center justify-between gap-6 md:gap-10">

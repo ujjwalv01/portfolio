@@ -12,10 +12,10 @@ const HeroSection = () => {
           
           {/* Left Column - Profile & Socials */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full lg:w-[35%] flex flex-col items-center will-change-transform"
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+            className="w-full lg:w-[35%] flex flex-col items-center will-change-transform transform-gpu"
           >
             {/* Profile Image container */}
             <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden mb-8 relative border border-white/10 bg-neutral-900 shadow-[0_0_40px_10px_rgba(0,0,0,0.6)] hover:shadow-[0_0_60px_20px_rgba(0,0,0,0.8)] hover:-translate-y-3 transition-all duration-500 cursor-pointer">
@@ -69,10 +69,10 @@ const HeroSection = () => {
 
           {/* Right Column - Text & Stats */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-            className="w-full lg:w-[60%] flex flex-col text-left will-change-transform"
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+            className="w-full lg:w-[60%] flex flex-col text-left will-change-transform transform-gpu"
           >
             <div className="flex items-center gap-3 sm:gap-4 mb-6">
               <span className="text-amber-500 font-medium text-xl md:text-2xl tracking-wide">Hello</span>

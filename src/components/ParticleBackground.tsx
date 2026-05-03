@@ -26,6 +26,14 @@ const ParticleBackground = () => {
     if (!ctx) return;
 
     let animId = 0;
+    let isActive = false;
+    
+    // Completely stop the background loop to allow hero animations to finish smoothly
+    const startTimeout = setTimeout(() => {
+      isActive = true;
+      draw();
+    }, 1500);
+
     let pixelRatio = window.devicePixelRatio || 1;
     let particles: Particle[] = [];
     let ripples: Ripple[] = [];
@@ -143,6 +151,9 @@ const ParticleBackground = () => {
       const themeL = isDarkTheme ? "100%" : "0%";
 
       ctx.clearRect(0, 0, width, height);
+      
+      if (!isActive) return;
+
       ctx.fillStyle = "transparent";
       ctx.fillRect(0, 0, width, height);
 
@@ -223,7 +234,6 @@ const ParticleBackground = () => {
     };
 
     resize();
-    draw();
 
     window.addEventListener("resize", resize);
     window.addEventListener("pointermove", handlePointerMove);
@@ -234,6 +244,7 @@ const ParticleBackground = () => {
 
     return () => {
       cancelAnimationFrame(animId);
+      clearTimeout(startTimeout);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerdown", handlePointerDown);

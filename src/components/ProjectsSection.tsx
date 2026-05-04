@@ -35,7 +35,7 @@ const projects = [
     description: "An intelligent tool designed to transform raw, unstructured inputs into highly effective and well-written AI prompts for LLMs.",
     tags: ["React", "JavaScript", "Vite", "AI Integration"],
     github: "https://github.com/ujjwalv01/promptify.git",
-    live: "https://promptify-js.vercel.app/",
+    live: "https://trypromptify.vercel.app/",
     image: "/Screenshot 2026-05-03 153037.png",
     bgColor: "bg-[#FBBF24]", // Amber pastel
   }

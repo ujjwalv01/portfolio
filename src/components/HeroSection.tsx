@@ -31,19 +31,19 @@ const HeroSection = () => {
 
             {/* Social Icons */}
             <div className="flex items-center gap-8 mb-10 text-white/50">
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="https://linkedin.com/in/ujjwal-verma-cse" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
                 <Linkedin className="w-6 h-6" strokeWidth={1.5} />
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="https://x.com/Ujjwal_v01" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
                 {/* Custom X icon using an SVG path since lucide X is a close icon */}
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="https://www.instagram.com/_ujjwalverma._" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
                 <Instagram className="w-6 h-6" strokeWidth={1.5} />
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="https://github.com/ujjwalv01" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
                 <Github className="w-6 h-6" strokeWidth={1.5} />
               </a>
             </div>

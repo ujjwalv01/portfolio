@@ -4,6 +4,15 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
+    title: "RepWise",
+    description: "An AI-powered fitness and nutrition ecosystem featuring a natural language food scanner, custom workout generation, and an interactive hydration tracker.",
+    tags: ["AI Integration", "Fitness Tracker", "UI/UX", "React"],
+    github: "https://github.com/ujjwalv01/repwise",
+    live: "https://trainwithrepwise.vercel.app/",
+    image: "/Repwise.png",
+    bgColor: "bg-[#8B5CF6]", // Purple pastel
+  },
+  {
     title: "E-Commerce Website",
     description: "A full-stack e-commerce website featuring product listing, cart system, and user interactions. Built with modern web technologies.",
     tags: ["Full-Stack", "Product Listing", "Cart System", "User Auth"],
@@ -71,27 +80,27 @@ const ProjectsSection = () => {
               <div className="relative aspect-video overflow-hidden border-b border-white/5 bg-[#0a0a0a]/50">
                 {/* A subtle dark overlay to blend with the dark theme */}
                 <div className="absolute inset-0 bg-black/10 mix-blend-overlay z-10 pointer-events-none"></div>
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover object-top transform transition-transform duration-700 group-hover:scale-[1.03]" 
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-top transform transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               </div>
-              
+
               {/* Bottom Content Section */}
               <div className="p-6 md:p-8 flex flex-col flex-grow">
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">{project.title}</h3>
                 <p className="text-sm text-muted-foreground mb-6 line-clamp-3 leading-relaxed">{project.description}</p>
-                
+
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.tags.map(tag => (
-                     <span key={tag} className="px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-500 text-xs font-mono border border-amber-500/20">
-                       {tag}
-                     </span>
+                    <span key={tag} className="px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-500 text-xs font-mono border border-amber-500/20">
+                      {tag}
+                    </span>
                   ))}
                 </div>
-                
+
                 {/* Actions */}
                 <div className="mt-auto flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <a href={project.github} target="_blank" rel="noreferrer" className="flex-1 inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-2xl border border-border/50 bg-card/50 text-sm font-medium text-foreground hover:bg-card hover:border-amber-500/40 transition-all">

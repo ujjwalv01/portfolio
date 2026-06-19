@@ -6,47 +6,56 @@ const projects = [
   {
     title: "RepWise",
     description: "An AI-powered fitness and nutrition ecosystem featuring a natural language food scanner, custom workout generation, and an interactive hydration tracker.",
-    tags: ["AI Integration", "Fitness Tracker", "UI/UX", "React"],
+    tags: ["AI Integration", "TypeScript", "Next.js", "React"],
     github: "https://github.com/ujjwalv01/repwise",
     live: "https://trainwithrepwise.vercel.app/",
-    image: "/Repwise.png",
+    image: "/gym.png",
     bgColor: "bg-[#8B5CF6]", // Purple pastel
-  },
-  {
-    title: "E-Commerce Website",
-    description: "A full-stack e-commerce website featuring product listing, cart system, and user interactions. Built with modern web technologies.",
-    tags: ["Full-Stack", "Product Listing", "Cart System", "User Auth"],
-    github: "https://github.com/ujjwalv01/e-commerce-app.git",
-    live: "https://github.com/ujjwalv01/e-commerce-app.git",
-    image: "/ecommerce-thumbnail.png.png",
-    bgColor: "bg-[#F87171]", // Red pastel
-  },
-  {
-    title: "Portfolio Website",
-    description: "A polished personal portfolio showcasing skills, projects, and developer story. Built with modern frontend techniques.",
-    tags: ["Responsive", "UI/UX", "Modern CSS", "Developer Brand"],
-    github: "https://github.com/ujjwalv01/portfolio",
-    live: "https://github.com/ujjwalv01/portfolio",
-    image: "/image.png",
-    bgColor: "bg-[#60A5FA]", // Blue pastel
   },
   {
     title: "Rival Scan AI",
     description: "An AI-powered competitive intelligence tool that researches any company in seconds. Generates CI reports featuring SWOT analysis and charts.",
-    tags: ["Next.js", "AI (Groq/Claude)", "Firecrawl", "Recharts"],
+    tags: ["Next.js", "Groq API", "Firecrawl", "Recharts"],
     github: "https://github.com/ujjwalv01/rivalscan-ai.git",
     live: "https://rivalscan-ai-01.vercel.app/",
-    image: "/rival scan.png",
+    image: "/xyz.png",
     bgColor: "bg-[#34D399]", // Emerald pastel
+  },
+  {
+    title: "Portfolio Website",
+    description: "A polished personal portfolio showcasing skills, projects, and developer story. Built with modern frontend techniques.",
+    tags: ["Front-end", "React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/ujjwalv01/portfolio",
+    live: "https://github.com/ujjwalv01/portfolio",
+    image: "/Screenshot 2026-06-19 233135.png",
+    bgColor: "bg-[#60A5FA]", // Blue pastel
+  },
+  {
+    title: "LinkMedicalSpaces",
+    description: "An Airbnb-style platform for medical spaces that helps users discover, compare, and book healthcare-related venues through an intuitive search, booking, and management experience.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Prisma", "Cloudinary"],
+    github: "https://github.com/ujjwalv01/LinkMedicalSpaces.git",
+    live: "https://lmsdeply.vercel.app/",
+    image: "/Screenshot 2026-06-19 234507.png",
+    bgColor: "bg-[#FBBF24]", // Amber pastel
   },
   {
     title: "Promptify",
     description: "An intelligent tool designed to transform raw, unstructured inputs into highly effective and well-written AI prompts for LLMs.",
-    tags: ["React", "JavaScript", "Vite", "AI Integration"],
+    tags: ["React", "JavaScript", "Vite", "HTML", "CSS"],
     github: "https://github.com/ujjwalv01/promptify.git",
     live: "https://trypromptify.vercel.app/",
     image: "/Screenshot 2026-05-03 153037.png",
     bgColor: "bg-[#FBBF24]", // Amber pastel
+  },
+  {
+    title: "E-Commerce Website",
+    description: "A full-stack e-commerce website featuring product listing, cart system, and user interactions. Built with modern web technologies.",
+    tags: ["MERN-Stack", "MongoDB", "E-Commerce", "React", "Node.js"],
+    github: "https://github.com/ujjwalv01/e-commerce-app.git",
+    live: "https://github.com/ujjwalv01/e-commerce-app.git",
+    image: "/ecommerce-thumbnail.png.png",
+    bgColor: "bg-[#F87171]", // Red pastel
   }
 ];
 
